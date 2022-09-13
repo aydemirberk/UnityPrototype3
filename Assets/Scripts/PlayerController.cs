@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     public AudioClip crashSound;
     public float gravityForce;
     private float jumpModifier = 10f;
-    public bool isOnGround = true;
+    bool isOnGround = true;
     public bool gameOver = false;
     
 
@@ -21,7 +21,6 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
         playerRb = GetComponent<Rigidbody>();
         Physics.gravity *= gravityForce;
         playerAnim = GetComponent<Animator>();
@@ -58,7 +57,6 @@ public class PlayerController : MonoBehaviour
             explosionParticle.Play();
             dirtParticle.Stop();
             playerAudio.PlayOneShot(crashSound, 1.0f);
-            
         }
         
     }
